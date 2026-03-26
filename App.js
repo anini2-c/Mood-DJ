@@ -1,4 +1,5 @@
 // frontend/src/App.js
+npm run build
 import React, { useState } from 'react';
 
 function App() {
@@ -7,9 +8,9 @@ function App() {
   const [playlist, setPlaylist] = useState([]);
 
   const handleSubmit = () => {
-    // Aquí iría la llamada al backend para guardar artista y mood
+    
     console.log('Artista:', artista, 'Mood:', mood);
-    // Simulamos playlist
+    
     setPlaylist([`${artista} - Canción 1`, `${artista} - Canción 2`]);
   };
 
