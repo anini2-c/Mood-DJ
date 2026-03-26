@@ -1,4 +1,4 @@
-// frontend/src/App.js
+<!DOCTYPE html>
 npm run build
 import React, { useState } from 'react';
 
