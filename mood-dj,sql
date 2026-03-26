@@ -1,0 +1,31 @@
+-- database/mood-dj.sql
+
+CREATE TABLE usuarios (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    password_hash VARCHAR(255)
+);
+
+CREATE TABLE gustos (
+    id SERIAL PRIMARY KEY,
+    usuario_id INT REFERENCES usuarios(id),
+    artista VARCHAR(100),
+    genero VARCHAR(50)
+);
+
+CREATE TABLE moods (
+    id SERIAL PRIMARY KEY,
+    usuario_id INT REFERENCES usuarios(id),
+    fecha DATE,
+    mood VARCHAR(50),
+    actividad VARCHAR(50)
+);
+
+CREATE TABLE historial (
+    id SERIAL PRIMARY KEY,
+    usuario_id INT REFERENCES usuarios(id),
+    mood_id INT REFERENCES moods(id),
+    cancion VARCHAR(100),
+    artista VARCHAR(100)
+);
